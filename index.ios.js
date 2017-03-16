@@ -25,9 +25,7 @@ export default class CoffeeWhere extends Component {
       <Text style={styles.welcome}>
         Welcome to CoffeeWhere!
       </Text>
-      <Icon.Button name="facebook" backgroundColor="#3b5998" onPress={this.loginWithFacebook}>
-        Login with Facebook
-      </Icon.Button>
+      <Icon name="search" size={20} onPress={this.loginWithFacebook} />
       <ScrollableTabView
         style={{marginTop: 20, }}
         renderTabBar={() => <ScrollableTabBar />}
