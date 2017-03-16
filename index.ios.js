@@ -16,6 +16,8 @@ import {
 import ScrollableTabView, { ScrollableTabBar, }
 from 'react-native-scrollable-tab-view';
 
+import Icon from 'react-native-vector-icons/FontAwesome';
+
 export default class CoffeeWhere extends Component {
   render() {
     return (
@@ -23,6 +25,9 @@ export default class CoffeeWhere extends Component {
       <Text style={styles.welcome}>
         Welcome to CoffeeWhere!
       </Text>
+      <Icon.Button name="facebook" backgroundColor="#3b5998" onPress={this.loginWithFacebook}>
+        Login with Facebook
+      </Icon.Button>
       <ScrollableTabView
         style={{marginTop: 20, }}
         renderTabBar={() => <ScrollableTabBar />}
