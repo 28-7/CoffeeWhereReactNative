@@ -9,24 +9,29 @@ import {
   AppRegistry,
   StyleSheet,
   Text,
-  View
+  View,
+  TabBar,
 } from 'react-native';
+
+import ScrollableTabView, { ScrollableTabBar, }
+from 'react-native-scrollable-tab-view';
 
 export default class CoffeeWhere extends Component {
   render() {
     return (
-      <View style={styles.container}>
-        <Text style={styles.welcome}>
-          Welcome to React Native!
-        </Text>
-        <Text style={styles.instructions}>
-          To get started, edit index.ios.js
-        </Text>
-        <Text style={styles.instructions}>
-          Press Cmd+R to reload,{'\n'}
-          Cmd+D or shake for dev menu
-        </Text>
-      </View>
+    <View style={styles.container}>
+      <Text style={styles.welcome}>
+        Welcome to CoffeeWhere!
+      </Text>
+      <ScrollableTabView
+        style={{marginTop: 20, }}
+        renderTabBar={() => <ScrollableTabBar />}
+      >
+        <Text tabLabel='Tab #1'>My</Text>
+        <Text tabLabel='Tab #2'>favorite</Text>
+        <Text tabLabel='Tab #3'>project</Text>
+      </ScrollableTabView>
+    </View>
     );
   }
 }
@@ -37,16 +42,12 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     backgroundColor: '#F5FCFF',
+    paddingTop: 30,
   },
   welcome: {
     fontSize: 20,
     textAlign: 'center',
     margin: 10,
-  },
-  instructions: {
-    textAlign: 'center',
-    color: '#333333',
-    marginBottom: 5,
   },
 });
 
