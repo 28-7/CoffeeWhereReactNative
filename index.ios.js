@@ -10,12 +10,10 @@ import {
   StyleSheet,
   Text,
   View,
-  Navigator,
-  TouchableHighlight,
   TabBar,
 } from 'react-native';
 
-import ScrollableTabView, { DefaultTabBar, ScrollableTabBar, }
+import ScrollableTabView, { ScrollableTabBar, }
 from 'react-native-scrollable-tab-view';
 
 export default class CoffeeWhere extends Component {
@@ -23,11 +21,11 @@ export default class CoffeeWhere extends Component {
     return (
     <View style={styles.container}>
       <Text style={styles.welcome}>
-        Welcome to React Native!
+        Welcome to CoffeeWhere!
       </Text>
       <ScrollableTabView
         style={{marginTop: 20, }}
-        renderTabBar={() => <DefaultTabBar />}
+        renderTabBar={() => <ScrollableTabBar />}
       >
         <Text tabLabel='Tab #1'>My</Text>
         <Text tabLabel='Tab #2'>favorite</Text>
@@ -50,18 +48,6 @@ const styles = StyleSheet.create({
     fontSize: 20,
     textAlign: 'center',
     margin: 10,
-  },
-  instructions: {
-    textAlign: 'center',
-    color: '#333333',
-    marginBottom: 5,
-  },tabContent: {
-    flex: 1,
-    alignItems: 'center',
-  },
-  tabText: {
-    color: 'white',
-    margin: 50,
   },
 });
 
