@@ -27,6 +27,14 @@ export default class CoffeeWhere extends Component {
       author: 'jimmy',
       description:'this is a test, just a test, do not ask too much'
     };
+
+    let test2= {
+      pic: 'https://upload.wikimedia.org/wikipedia/commons/d/de/Bananavarieties.jpg',
+      shortTitle: 'short title',
+      date: '2017/03/20',
+      author: 'norman',
+      description:'this is a test, just a test, do not ask too much'
+    };
     return (
     <View style={styles.container}>
       <Text style={styles.welcome}>
@@ -35,8 +43,9 @@ export default class CoffeeWhere extends Component {
       <ScrollableTabView
         style={{marginTop: 20, }}
         renderTabBar={() => <ScrollableTabBar />}>
-        <Text tabLabel='Tab #1'>
-          <SimpleArticle data={test}></SimpleArticle>
+          <Text tabLabel='Tab #1' style={{flex:1, flexDirection:'row'}}>
+            <SimpleArticle data={test} style={{flex:0.5}}></SimpleArticle>
+          <SimpleArticle data={test2} style={{flex:0.5}}></SimpleArticle>
         </Text>
         <Text tabLabel='Tab #2'>favorite</Text>
         <Text tabLabel='Tab #3'>project</Text>
