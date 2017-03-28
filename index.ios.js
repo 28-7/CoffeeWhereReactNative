@@ -43,10 +43,10 @@ export default class CoffeeWhere extends Component {
       <ScrollableTabView
         style={{marginTop: 20, }}
         renderTabBar={() => <ScrollableTabBar />}>
-          <Text tabLabel='Tab #1' style={{flex:1, flexDirection:'row'}}>
-            <SimpleArticle data={test} style={{flex:0.5}}></SimpleArticle>
-          <SimpleArticle data={test2} style={{flex:0.5}}></SimpleArticle>
-        </Text>
+          <View tabLabel='Tab #1' style={{flex:1, flexDirection:'row'}}>
+            <SimpleArticle data={test} style={{flex:1}}></SimpleArticle>
+          <SimpleArticle data={test2} style={{flex:1}}></SimpleArticle>
+        </View>
         <Text tabLabel='Tab #2'>favorite</Text>
         <Text tabLabel='Tab #3'>project</Text>
       </ScrollableTabView>
