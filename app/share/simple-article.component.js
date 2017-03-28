@@ -10,10 +10,11 @@ export class SimpleArticle extends Component {
     render() {
         return (
             <View style={styles.box}>
-                <View style={styles.imageBlock}>
-                    <Image source={{ uri: this.props.data.pic }} style={{ height: 100 }} />
-                    <Text style={styles.imageText}>{this.props.data.shortTitle}</Text>
-                </View>
+                { !this.props.data.pic ? (
+                    <View style={styles.imageBlock}>
+                        <Image source={{ uri: this.props.data.pic }} style={{ height: 100 }} />
+                        <Text style={styles.imageText}>{this.props.data.shortTitle}</Text>
+                    </View>): (null)}
                 <View style={styles.dateBlock}>
                     <Text style={styles.flex1}>{this.props.data.date}</Text>
                     <Text style={styles.flex1}>{this.props.data.author}</Text>
@@ -30,7 +31,7 @@ const styles = StyleSheet.create({
         margin: 1
     },
     imageBlock: {
-        alignSelf: "stretch",
+        alignSelf: "stretch"
     },
     imageText: {
         position: 'absolute',

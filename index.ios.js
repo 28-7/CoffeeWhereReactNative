@@ -21,7 +21,7 @@ import { SimpleArticle } from './app/share/simple-article.component'
 export default class CoffeeWhere extends Component {
   render() {
     let test = {
-      pic: 'https://upload.wikimedia.org/wikipedia/commons/d/de/Bananavarieties.jpg',
+      // pic: 'https://upload.wikimedia.org/wikipedia/commons/d/de/Bananavarieties.jpg',
       shortTitle: 'short title',
       date: '2017/03/17',
       author: 'jimmy',
