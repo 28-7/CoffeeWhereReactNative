@@ -9,34 +9,42 @@ import {
 export class SimpleArticle extends Component {
     render() {
         return (
-            <Text style={styles.box}>
-                <View style={styles.image}>
+            <View style={styles.box}>
+                <View style={styles.imageBlock}>
                     <Image source={{ uri: this.props.data.pic }} style={{ height: 100 }} />
                     <Text style={styles.imageText}>{this.props.data.shortTitle}</Text>
                 </View>
-                <Text style={{flex:1}}>{this.props.data.date}</Text>
-                <Text style={{flex:1}}>{this.props.data.author}</Text>
-                <Text style={{flex:1}}>{this.props.data.description}</Text>
-            </Text>
+                <View style={styles.dateBlock}>
+                    <Text style={styles.flex1}>{this.props.data.date}</Text>
+                    <Text style={styles.flex1}>{this.props.data.author}</Text>
+                </View>
+                <Text>{this.props.data.description}</Text>
+            </View>
         );
     }
 }
 
 const styles = StyleSheet.create({
     box: {
-        // width: 200,
-        // height:100
         flex: 1,
-        flexDirection:'column'
+        margin: 1
     },
-    image: {
-        width: 100,
-        height: 100,
-        flex:1
+    imageBlock: {
+        alignSelf: "stretch",
     },
     imageText: {
-        position: 'relative',
-        bottom: 20,
-        left:0
+        position: 'absolute',
+        bottom: 0,
+        left: 0,
+        backgroundColor: 'rgba(0, 0, 0, 0.6)',
+        color: 'white',
+        borderWidth: 1,
+        width:'100%'
+    },
+    dateBlock: {
+        flexDirection:'row'
+    },
+    flex1: {
+        flex:1
     }
 });
