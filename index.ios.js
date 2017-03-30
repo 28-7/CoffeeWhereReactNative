@@ -21,11 +21,12 @@ import { SimpleArticle } from './app/share/simple-article.component'
 export default class CoffeeWhere extends Component {
   render() {
     let test = {
-      // pic: 'https://upload.wikimedia.org/wikipedia/commons/d/de/Bananavarieties.jpg',
+      pic: 'https://upload.wikimedia.org/wikipedia/commons/d/de/Bananavarieties.jpg',
       shortTitle: 'short title',
       date: '2017/03/17',
       author: 'jimmy',
-      description:'this is a test, just a test, do not ask too much'
+      description: 'this is a test, just a test, do not ask too much',
+      tagList:['平日不限時']
     };
 
     let test2= {
@@ -33,7 +34,8 @@ export default class CoffeeWhere extends Component {
       shortTitle: 'short title',
       date: '2017/03/20',
       author: 'norman',
-      description:'this is a test, just a test, do not ask too much'
+      description: 'this is a test, just a test, do not ask too much',
+      tagList:['甜點', '場地租借']
     };
     return (
     <View style={styles.container}>

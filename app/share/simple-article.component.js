@@ -10,15 +10,30 @@ export class SimpleArticle extends Component {
     render() {
         return (
             <View style={styles.box}>
-                {this.imageRender()}
+                { this.imageRender() }
                 <View style={styles.dateBlock}>
                     <Text style={styles.flex1}>{this.props.data.date}</Text>
                     <Text style={styles.flex1}>{this.props.data.author}</Text>
                 </View>
                 <Text>{this.props.data.description}</Text>
+                { this.tagRender() }
             </View>
         );
     }
+
+    tagRender() {
+        return (
+            this.props.data.tagList ? (
+                <View style={styles.tagBlock}>
+                    {
+                        this.props.data.tagList.map((tag, key) => {
+                            return <Text style={styles.tag} key={key}>{tag}</Text>
+                        })
+                    }
+                </View>) : (null)
+        );
+    }
+
     imageRender() {
         return (
             this.props.data.pic ? (
@@ -45,12 +60,25 @@ const styles = StyleSheet.create({
         backgroundColor: 'rgba(0, 0, 0, 0.6)',
         color: 'white',
         borderWidth: 1,
-        width:'100%'
+        width: '100%'
     },
     dateBlock: {
-        flexDirection:'row'
+        flexDirection: 'row'
     },
     flex1: {
-        flex:1
+        flex: 1
+    },
+    tagBlock: {
+        width: '100%',
+        flexDirection: 'row',
+    },
+    tag: {
+        height: 25,
+        backgroundColor: '#EEEEEE',
+        margin: 2,
+        paddingTop: 5,
+        paddingLeft: 10,
+        paddingBottom: 5,
+        paddingRight: 10,
     }
 });
