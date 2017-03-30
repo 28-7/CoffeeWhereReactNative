@@ -10,17 +10,22 @@ export class SimpleArticle extends Component {
     render() {
         return (
             <View style={styles.box}>
-                { !this.props.data.pic ? (
-                    <View style={styles.imageBlock}>
-                        <Image source={{ uri: this.props.data.pic }} style={{ height: 100 }} />
-                        <Text style={styles.imageText}>{this.props.data.shortTitle}</Text>
-                    </View>): (null)}
+                {this.imageRender()}
                 <View style={styles.dateBlock}>
                     <Text style={styles.flex1}>{this.props.data.date}</Text>
                     <Text style={styles.flex1}>{this.props.data.author}</Text>
                 </View>
                 <Text>{this.props.data.description}</Text>
             </View>
+        );
+    }
+    imageRender() {
+        return (
+            this.props.data.pic ? (
+                <View style={styles.imageBlock}>
+                    <Image source={{ uri: this.props.data.pic }} style={{ height: 100 }} />
+                    <Text style={styles.imageText}>{this.props.data.shortTitle}</Text>
+                </View>) : (null)
         );
     }
 }
