@@ -27,7 +27,8 @@ export default class CoffeeWhere extends Component {
       e_date: '2017/03/20',
       author: 'jimmy',
       description: 'this is a test, just a test, do not ask too much',
-      tagList:['平日不限時']
+      category: '公告',
+      town:'內湖區'
     };
 
     let test2= {
@@ -36,7 +37,7 @@ export default class CoffeeWhere extends Component {
       publice_date: '2017/03/20',
       author: 'norman',
       description: 'this is a test, just a test, do not ask too much',
-      tagList:['甜點', '場地租借']
+      tagList:['甜點', '場地租借'],
     };
     return (
     <View style={styles.container}>

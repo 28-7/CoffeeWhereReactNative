@@ -12,6 +12,7 @@ export class SimpleArticle extends Component {
             <View style={styles.box}>
                 {this.imageRender()}
                 {this.dateRender()}
+                {this.categoryRender()}
                 <Text>{this.props.data.description}</Text>
                 { this.tagRender() }
             </View>
@@ -52,6 +53,16 @@ export class SimpleArticle extends Component {
                         <Text style={styles.eventDurtion}> {'日期:' + this.props.data.s_date + '~' + this.props.data.e_date}</Text>
                     </View>
                 )
+        );
+    }
+
+    categoryRender() {
+        return (
+            this.props.data.category ? (
+                <View style={styles.categoryBlock}>
+                    <Text style={styles.category}>{this.props.data.town}</Text>
+                    <Text style={styles.category}>{this.props.data.category}</Text>
+                </View>) : (null)
         );
     }
 }
@@ -96,6 +107,20 @@ const styles = StyleSheet.create({
         color: '#6192FF'
     },
     eventDurtion: {
-        color: '#B7A5A4'
+        color: '#B7A5A4',
+        fontSize: 12
+    },
+    categoryBlock: {
+        width: '100%',
+        flexDirection: 'row',
+    },
+    category: {
+        height: 25,
+        backgroundColor: '#E8DFD1',
+        margin: 2,
+        paddingTop: 5,
+        paddingLeft: 10,
+        paddingBottom: 5,
+        paddingRight: 10,
     }
 });
