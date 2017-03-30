@@ -10,11 +10,8 @@ export class SimpleArticle extends Component {
     render() {
         return (
             <View style={styles.box}>
-                { this.imageRender() }
-                <View style={styles.dateBlock}>
-                    <Text style={styles.flex1}>{this.props.data.date}</Text>
-                    <Text style={styles.flex1}>{this.props.data.author}</Text>
-                </View>
+                {this.imageRender()}
+                {this.dateRender()}
                 <Text>{this.props.data.description}</Text>
                 { this.tagRender() }
             </View>
@@ -41,6 +38,20 @@ export class SimpleArticle extends Component {
                     <Image source={{ uri: this.props.data.pic }} style={{ height: 100 }} />
                     <Text style={styles.imageText}>{this.props.data.shortTitle}</Text>
                 </View>) : (null)
+        );
+    }
+
+    dateRender() {
+        return (
+            this.props.data.publice_date ? (
+                <View style={styles.dateBlock}>
+                    <Text style={styles.articleDate}>{this.props.data.publice_date + ' by ' + this.props.data.author}</Text>
+                </View>
+            ) : (
+                    <View style={styles.dateBlock}>
+                        <Text style={styles.eventDurtion}> {'日期:' + this.props.data.s_date + '~' + this.props.data.e_date}</Text>
+                    </View>
+                )
         );
     }
 }
@@ -80,5 +91,11 @@ const styles = StyleSheet.create({
         paddingLeft: 10,
         paddingBottom: 5,
         paddingRight: 10,
+    },
+    articleDate: {
+        color: '#6192FF'
+    },
+    eventDurtion: {
+        color: '#B7A5A4'
     }
 });

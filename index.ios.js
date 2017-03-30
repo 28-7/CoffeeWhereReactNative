@@ -23,7 +23,8 @@ export default class CoffeeWhere extends Component {
     let test = {
       pic: 'https://upload.wikimedia.org/wikipedia/commons/d/de/Bananavarieties.jpg',
       shortTitle: 'short title',
-      date: '2017/03/17',
+      s_date: '2017/03/17',
+      e_date: '2017/03/20',
       author: 'jimmy',
       description: 'this is a test, just a test, do not ask too much',
       tagList:['平日不限時']
@@ -32,7 +33,7 @@ export default class CoffeeWhere extends Component {
     let test2= {
       pic: 'https://upload.wikimedia.org/wikipedia/commons/d/de/Bananavarieties.jpg',
       shortTitle: 'short title',
-      date: '2017/03/20',
+      publice_date: '2017/03/20',
       author: 'norman',
       description: 'this is a test, just a test, do not ask too much',
       tagList:['甜點', '場地租借']
