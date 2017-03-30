@@ -28,7 +28,8 @@ export default class CoffeeWhere extends Component {
       author: 'jimmy',
       description: 'this is a test, just a test, do not ask too much',
       category: '公告',
-      town:'內湖區'
+      town: '內湖區',
+      shop_name:'BS and Drink'
     };
 
     let test2= {
@@ -49,8 +50,8 @@ export default class CoffeeWhere extends Component {
         renderTabBar={() => <ScrollableTabBar />}>
           <View tabLabel='Tab #1' style={{flex:1, flexDirection:'row'}}>
             <SimpleArticle data={test}></SimpleArticle>
-          <SimpleArticle data={test2}></SimpleArticle>
-        </View>
+            <SimpleArticle data={test2}></SimpleArticle>
+          </View>
         <Text tabLabel='Tab #2'>favorite</Text>
         <Text tabLabel='Tab #3'>project</Text>
       </ScrollableTabView>

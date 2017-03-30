@@ -37,7 +37,16 @@ export class SimpleArticle extends Component {
             this.props.data.pic ? (
                 <View style={styles.imageBlock}>
                     <Image source={{ uri: this.props.data.pic }} style={{ height: 100 }} />
-                    <Text style={styles.imageText}>{this.props.data.shortTitle}</Text>
+                    {
+                        this.props.data.shop_name ? (
+                            <View style={styles.imageText}>
+                                <Text style={styles.shopName}>{this.props.data.shop_name}</Text>
+                                <Text style={styles.title}>{this.props.data.shortTitle}</Text>
+                            </View>
+                        ) : (
+                                <Text style={[styles.imageText, styles.title]}>{this.props.data.shortTitle}</Text>
+                            )
+                    }
                 </View>) : (null)
         );
     }
@@ -80,8 +89,6 @@ const styles = StyleSheet.create({
         bottom: 0,
         left: 0,
         backgroundColor: 'rgba(0, 0, 0, 0.6)',
-        color: 'white',
-        borderWidth: 1,
         width: '100%'
     },
     dateBlock: {
@@ -122,5 +129,11 @@ const styles = StyleSheet.create({
         paddingLeft: 10,
         paddingBottom: 5,
         paddingRight: 10,
+    },
+    shopName: {
+        color:'#FFDA00'
+    },
+    title: {
+        color: 'white',
     }
 });
