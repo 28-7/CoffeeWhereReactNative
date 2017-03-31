@@ -14,10 +14,32 @@ import {
 } from 'react-native';
 
 import ScrollableTabView, { ScrollableTabBar, }
-from 'react-native-scrollable-tab-view';
+  from 'react-native-scrollable-tab-view';
+
+import { SimpleArticle } from './app/share/simple-article.component'
 
 export default class CoffeeWhere extends Component {
   render() {
+    let test = {
+      pic: 'https://upload.wikimedia.org/wikipedia/commons/d/de/Bananavarieties.jpg',
+      shortTitle: 'short title',
+      s_date: '2017/03/17',
+      e_date: '2017/03/20',
+      author: 'jimmy',
+      description: 'this is a test, just a test, do not ask too much',
+      category: '公告',
+      town: '內湖區',
+      shop_name:'BS and Drink'
+    };
+
+    let test2= {
+      pic: 'https://upload.wikimedia.org/wikipedia/commons/d/de/Bananavarieties.jpg',
+      shortTitle: 'short title',
+      publice_date: '2017/03/20',
+      author: 'norman',
+      description: 'this is a test, just a test, do not ask too much',
+      tagList:['甜點', '場地租借'],
+    };
     return (
     <View style={styles.container}>
       <Text style={styles.welcome}>
@@ -25,9 +47,11 @@ export default class CoffeeWhere extends Component {
       </Text>
       <ScrollableTabView
         style={{marginTop: 20, }}
-        renderTabBar={() => <ScrollableTabBar />}
-      >
-        <Text tabLabel='Tab #1'>My</Text>
+        renderTabBar={() => <ScrollableTabBar />}>
+          <View tabLabel='Tab #1' style={{flex:1, flexDirection:'row'}}>
+            <SimpleArticle data={test}></SimpleArticle>
+            <SimpleArticle data={test2}></SimpleArticle>
+          </View>
         <Text tabLabel='Tab #2'>favorite</Text>
         <Text tabLabel='Tab #3'>project</Text>
       </ScrollableTabView>
